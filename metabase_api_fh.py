@@ -15,6 +15,8 @@ class MetabaseAPI:
         self.auth = (self.email, self.password) if basic_auth else None
         self.authenticate()
         self.is_admin = is_admin
+        if not self.is_admin:
+            print(''' If you are not Admin, you won't be able to copy, clone questions from personal collections.''')
 
     def authenticate(self):
         """Get a Session ID"""
